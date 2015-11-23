@@ -65,6 +65,15 @@
           "sudo chown root:root /mnt/sda1/var/lib/boot2docker/profile",
           "sync"
       ]
+    },{
+      "type": "shell",
+      "only": ["virtualbox-iso"],
+      "inline": [
+          "sudo echo 'Installinng vboxsf'",
+          "sudo modprobe vboxguest",
+          "sudo modprobe vboxsf",
+          "sync"
+      ]
     }],
 
     "post-processors": [[{

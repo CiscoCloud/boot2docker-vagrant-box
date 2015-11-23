@@ -30,9 +30,11 @@ Vagrant.configure("2") do |config|
     ]
 
     # On VirtualBox, we don't have guest additions or a functional vboxsf
-    # in TinyCore Linux, so tell Vagrant that so it can be smarter.
-    v.check_guest_additions = false
-    v.functional_vboxsf     = false
+    # in TinyCore Linux, so tell Vagrant that so it can be smarter. 
+    # Commenting out as tries to deploy rsync in boot2docker which does not work. 
+    # The attempt to deploy rsync happens even if no directory is synced to the VM. 
+    #v.check_guest_additions = false
+    #v.functional_vboxsf     = false
   end
 
   ["vmware_fusion", "vmware_workstation"].each do |vmware|
