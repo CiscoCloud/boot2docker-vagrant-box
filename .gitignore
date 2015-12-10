@@ -2,4 +2,5 @@
 .vagrant/
 packer_cache/
 *.box
+*.log
 boot2docker.iso
