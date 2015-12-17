@@ -7,16 +7,17 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Expose the Docker port
-  config.vm.network "forwarded_port", guest: 2375, host: 2375,
-    host_ip: "127.0.0.1", auto_correct: true, id: "docker"
+  #config.vm.network "forwarded_port", guest: 2375, host: 2375,
+  #  host_ip: "127.0.0.1", auto_correct: true, id: "docker"
 
   # b2d doesn't support NFS
   config.nfs.functional = false
 
   # b2d doesn't persist filesystem between reboots
-  if config.ssh.respond_to?(:insert_key)
-    config.ssh.insert_key = false
-  end
+  #if config.ssh.respond_to?(:insert_key)
+  #  config.ssh.insert_key = false
+  #end
+  config.ssh.insert_key = true
 
   # Attach the ISO
   config.vm.provider "virtualbox" do |v|
